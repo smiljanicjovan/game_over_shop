@@ -1,6 +1,11 @@
+body {
+  background-image: url(./assets/background.jpg);
+}
+
 .cont {
+  max-width: 70%;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  padding: 25px;
+  /* justify-content: space-between; */
 }
