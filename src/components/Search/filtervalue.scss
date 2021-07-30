@@ -1,0 +1,19 @@
+.filterValue {
+  width: 300px;
+  font-size: 18px;
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  font-family: Roboto;
+  border-bottom: 1px solid rgb(175, 167, 167);
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-image {
+    height: 100%;
+    padding: 0;
+  }
+}

@@ -1,0 +1,48 @@
+.game {
+  width: 100%;
+  padding-top: 100px;
+
+  &-wrap {
+    width: 450px;
+    height: 550px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.774);
+    border: 2px solid black;
+  }
+
+  &_title {
+    p {
+      font-size: 24px;
+      color: white;
+    }
+  }
+
+  &_image {
+    img {
+      width: 250px;
+    }
+  }
+
+  &_price {
+    color: white;
+    p {
+      font-size: 30px;
+    }
+  }
+  .gameId {
+    color: white;
+  }
+
+  &_button {
+    padding: 15px 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+}

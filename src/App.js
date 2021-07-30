@@ -1,37 +1,24 @@
-import React, { useEffect, useState } from "react";
-import Games from "./gamesOnSale/gamesOnSale";
-import Header from "./header/header";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import HomePage from "./pages/HomePage/HomePage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import DealPage from "./pages/DealPage/DealPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import SingleGamePage from "./pages/SingleGamePage/SingleGamePage";
 
 function App() {
-  const [games, setGames] = useState([]);
-  useEffect(() => {
-    gameOnSale();
-  }, []);
-
-  const gameOnSale = async () => {
-    const responce = await fetch("https://www.cheapshark.com/api/1.0/deals");
-    const data = await responce.json();
-    setGames(data);
-  };
-
   return (
     <div className="App">
-      <Header />
-      <div className="cont">
-        {games.map(game => (
-          <Games
-            key={game.dealID}
-            title={game.title}
-            price={game.normalPrice}
-            salePrice={game.salePrice}
-            savings={Math.round(game.savings)}
-            rate={game.steamRatingText}
-            deal={game.dealRating}
-            image={game.thumb}
-          />
-        ))}
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/" component={HomePage} exact />
+          <Route path="/about" component={AboutPage} exact />
+          <Route path="/deals" component={DealPage} exact />
+          <Route path="/search" component={SearchPage} exact />
+          <Route path="/:id" component={SingleGamePage} exact />
+        </Switch>
+      </Router>
     </div>
   );
 }
