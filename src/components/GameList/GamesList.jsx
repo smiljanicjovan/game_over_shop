@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./gameslist.scss";
 
 import axios from "axios";
-
 import Game from "./Game";
+
 export default function GamesList() {
   const [value, setValue] = useState([]);
 

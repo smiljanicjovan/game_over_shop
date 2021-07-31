@@ -12,3 +12,11 @@ export function SignupError() {
     </div>
   );
 }
+
+export function ShortPassword() {
+  return (
+    <div className="passworderror">
+      Password is too short. Please Enter at least 6 simbols.
+    </div>
+  );
+}

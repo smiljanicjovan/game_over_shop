@@ -3,7 +3,7 @@ import "./login.scss";
 
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import LoginError from "./LoginError";
+import LoginError from "../Error/LoginError";
 
 export default function Login() {
   const emailRef = useRef();

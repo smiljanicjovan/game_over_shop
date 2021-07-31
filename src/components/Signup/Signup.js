@@ -1,9 +1,13 @@
 import React, { useRef, useState } from "react";
 import "./signup.scss";
-
+import Loader from "react-loader-spinner";
 import { useAuth } from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
-import { SignupPasswordError, SignupError } from "./SignupError";
+import {
+  SignupPasswordError,
+  SignupError,
+  ShortPassword,
+} from "../Error/SignupError";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -19,6 +23,9 @@ export default function Signup() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    if (passwordRef.current.value.length < 6) {
+      return setError(<ShortPassword />);
+    }
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError(<SignupPasswordError />);
     }
@@ -38,7 +45,9 @@ export default function Signup() {
     <>
       <div className="signup">
         <p className="login-headline">SignUp</p>
-        {loading ? "loading" : null}
+        {!loading ? null : (
+          <Loader type="Puff" color="#00BFFF" height={100} width={100} />
+        )}
         {error && error}
         <form onSubmit={handleSubmit} className="signup_form">
           <label className="signup_form-group">

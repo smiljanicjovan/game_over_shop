@@ -58,7 +58,7 @@ export default function NavBarProperty() {
             <li>
               <Link to="/login">
                 <div className="nav-search">
-                  {!currentUser ? "Login" : "Loggout"}
+                  Login
                   <div className="nav-search-icon">
                     <Login className="nav-search-icon-svg" />
                   </div>
@@ -67,12 +67,14 @@ export default function NavBarProperty() {
             </li>
           ) : (
             <li>
-              <div className="nav-search" onClick={handleLogout}>
-                Loggout
-                <div className="nav-search-icon">
-                  <Login className="nav-search-icon-svg" />
+              <Link>
+                <div className="nav-search" onClick={handleLogout}>
+                  Loggout
+                  <div className="nav-search-icon">
+                    <Login className="nav-search-icon-svg" />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </li>
           )}
         </ul>

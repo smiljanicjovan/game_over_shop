@@ -13,12 +13,12 @@ export default function Game({ value }) {
         <div className="gameitem-image-rating">{value.dealRating}</div>
       </div>
       <div className="gameitem-price">
-        <p className="gameitem-price-normal">
-          Regular Price: <span>{value.normalPrice}€</span>
-        </p>
         <p className="gameitem-price-sale">
           Sale Price:
           <span>{value.isOnSale === "1" ? value.salePrice : null}€</span>
+        </p>
+        <p className="gameitem-price-normal">
+          Regular Price: <span>{value.normalPrice}€</span>
         </p>
       </div>
       <div className="gameitem-savings">
