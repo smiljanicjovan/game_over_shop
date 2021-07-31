@@ -2,8 +2,12 @@ import React from "react";
 import "./singlegame.scss";
 
 import NavBar from "../NavBar/NavBar";
+import { useContext } from "react";
+import CartContext from "../../context/Cart/CartContext";
 
 export default function SingleGame({ game }) {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <>
       <NavBar />
@@ -16,14 +20,18 @@ export default function SingleGame({ game }) {
             <img src={game.thumb} alt="game" />
           </div>
           <div className="game_price">
-            <p>Only for: {game.cheapest}€</p>
+            <p>
+              Only for: <span> {game.cheapest}€</span>
+            </p>
           </div>
           <div className="gameId">
-            <p className="game-dealId">{game.cheapestDealID}</p>
-            <p className="game-gameId">{game.gameID}</p>
-            <p className="game-steamId">{game.steamAppID}</p>
+            <p className="game-gameId">Game ID: {game.gameID}</p>
+            <p className="game-steamId">Steam ID: {game.steamAppID}</p>
           </div>
-          <div className="game_button">Add to Cart</div>
+
+          <button className="game_button" onClick={() => addToCart(game)}>
+            ADD TO CART
+          </button>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./filtervalue.scss";
+import "./searchvalue.scss";
 
 export default function SearchValue({ filter }) {
   return (
