@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+
 import CartDropdown from "../CartDropdown/CartDropdown";
 import CartContext from "../../context/Cart/CartContext";
 
@@ -10,6 +12,23 @@ import { ReactComponent as Login } from "../../assets/login.svg";
 
 export default function NavBarProperty() {
   const { cartItems, showHideCart } = useContext(CartContext);
+  const { currentUser, logout } = useAuth();
+  const [error, setError] = useState();
+  const history = useHistory();
+
+  async function handleLogout() {
+    setError("");
+
+    try {
+      await logout();
+      history.push("/");
+    } catch {
+      setError("failed");
+    }
+  }
+  if (error) {
+    console.error(error);
+  }
   return (
     <>
       <div className="navbar-property">
@@ -35,17 +54,27 @@ export default function NavBarProperty() {
               </div>
             </div>
           </li>
-          <li>
-            <Link to="/login">
-              {" "}
-              <div className="nav-search">
-                Login
+          {!currentUser ? (
+            <li>
+              <Link to="/signup">
+                <div className="nav-search">
+                  {!currentUser ? "Signup" : "Loggout"}
+                  <div className="nav-search-icon">
+                    <Login className="nav-search-icon-svg" />
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <div className="nav-search" onClick={handleLogout}>
+                Loggout
                 <div className="nav-search-icon">
                   <Login className="nav-search-icon-svg" />
                 </div>
               </div>
-            </Link>
-          </li>
+            </li>
+          )}
         </ul>
         <CartDropdown />
       </div>

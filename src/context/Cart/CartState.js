@@ -28,7 +28,7 @@ const CartState = ({ children }) => {
   const removeItem = id => {
     dispatch({ type: REMOVE_ITEM, payload: id });
   };
-  console.log(removeItem);
+
   const closeDropdown = () => {
     dispatch({ type: CLOSE_DROPDOWN });
   };

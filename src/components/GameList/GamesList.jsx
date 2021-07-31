@@ -17,10 +17,13 @@ export default function GamesList() {
   }, []);
 
   return (
-    <div className="gameslist">
-      {value.slice(-8).map((game, idx) => (
-        <Game key={idx} value={game} />
-      ))}
-    </div>
+    <>
+      <h1 className="gamelist-text">Some of best deals for today</h1>
+      <div className="gameslist">
+        {value.slice(-8).map((game, idx) => (
+          <Game key={idx} value={game} />
+        ))}
+      </div>
+    </>
   );
 }
