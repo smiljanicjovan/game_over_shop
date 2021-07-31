@@ -56,9 +56,9 @@ export default function NavBarProperty() {
           </li>
           {!currentUser ? (
             <li>
-              <Link to="/signup">
+              <Link to="/login">
                 <div className="nav-search">
-                  {!currentUser ? "Signup" : "Loggout"}
+                  {!currentUser ? "Login" : "Loggout"}
                   <div className="nav-search-icon">
                     <Login className="nav-search-icon-svg" />
                   </div>

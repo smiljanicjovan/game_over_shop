@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import "./login.scss";
+
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import LoginError from "./LoginError";
 
 export default function Login() {
   const emailRef = useRef();
@@ -19,33 +22,43 @@ export default function Login() {
       await login(emailRef.current.value, passwordRef.current.value);
       history.push("/");
     } catch {
-      setError("failed to sing in");
+      setError(<LoginError />);
     }
     setLoading(false);
   }
 
   return (
     <>
-      <div className="card">
-        <p>log in</p>
+      <div className="login">
+        <p className="login-headline">Login</p>
 
         {loading ? "loading" : null}
         {error && error}
-        <form onSubmit={handleSubmit}>
-          <label>
+        <form onSubmit={handleSubmit} className="login_form">
+          <label className="login_form-group">
             Email:
-            <input type="email" name="email" ref={emailRef} />
-          </label>
-          <label>
-            Password:
-            <input type="password" name="password" ref={passwordRef} />
+            <input
+              type="email"
+              name="email"
+              ref={emailRef}
+              className="login_form-group-input "
+              placeholder="Type your email"
+            />
           </label>
 
-          <input type="submit" value="Log in" />
+          <label className="login_form-group">
+            Password:
+            <input
+              type="password"
+              name="password"
+              ref={passwordRef}
+              className="login_form-group-input"
+              placeholder="Type your password"
+            />
+          </label>
+
+          <input type="submit" value="Login" className="login_button" />
         </form>
-      </div>
-      <div className="acc">
-        Need an acc <Link to="/signup">Sign uP</Link>
       </div>
     </>
   );
