@@ -33,7 +33,6 @@ export default function Search() {
       />
       {filtered.slice(-7).map(filter => (
         <>
-          {console.log(filter)}
           <SearchValue key={filter.gameID} filter={filter} />
         </>
       ))}
