@@ -9,7 +9,7 @@ export default function CartDropdownItem({ item }) {
       <div className="cartitems">
         <img src={item.thumb} alt="product img" className="img" />
         <p>{item.external}</p>
-
+        {console.log(removeItem)}
         <button onClick={() => removeItem(item.id)}>remove</button>
       </div>
     </>

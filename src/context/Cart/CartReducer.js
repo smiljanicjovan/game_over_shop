@@ -22,7 +22,9 @@ const CartReducer = (state, action) => {
     case REMOVE_ITEM: {
       return {
         ...state,
-        cartItems: state.cartItems.filter(item => item.id !== action.payload),
+        cartItems: state.cartItems.filter(
+          item => item.gameID !== action.gameID
+        ),
       };
     }
     case CLOSE_DROPDOWN: {

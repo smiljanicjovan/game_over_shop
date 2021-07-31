@@ -31,8 +31,11 @@ export default function Search() {
         }}
         className="search-bar"
       />
-      {filtered.slice(-7).map((filter, idx) => (
-        <SearchValue key={idx} filter={filter} />
+      {filtered.slice(-7).map(filter => (
+        <>
+          {console.log(filter)}
+          <SearchValue key={filter.gameID} filter={filter} />
+        </>
       ))}
     </div>
   );

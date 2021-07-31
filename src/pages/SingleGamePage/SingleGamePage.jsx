@@ -17,8 +17,8 @@ export default function SingleGamePage() {
   }, [id]);
   return (
     <div>
-      {value.map((game, idx) => (
-        <SingleItem key={idx} game={game} />
+      {value.map(game => (
+        <SingleItem key={game.gameID} game={game} />
       ))}
     </div>
   );
