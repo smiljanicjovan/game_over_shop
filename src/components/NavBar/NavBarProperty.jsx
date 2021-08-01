@@ -56,9 +56,9 @@ export default function NavBarProperty() {
           </li>
           {!currentUser ? (
             <li>
-              <Link to="/login">
+              <Link to="/signup">
                 <div className="nav-search">
-                  Login
+                  Sign Up
                   <div className="nav-search-icon">
                     <Login className="nav-search-icon-svg" />
                   </div>
@@ -67,7 +67,7 @@ export default function NavBarProperty() {
             </li>
           ) : (
             <li>
-              <Link>
+              <Link to="">
                 <div className="nav-search" onClick={handleLogout}>
                   Loggout
                   <div className="nav-search-icon">

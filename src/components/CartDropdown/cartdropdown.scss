@@ -12,7 +12,7 @@
   min-width: 350px;
   min-height: 200px;
   z-index: 200;
-  border: 2px solid black;
+  border: 1px solid black;
 
   &-item {
     width: 100%;
@@ -29,9 +29,17 @@
     }
   }
 
+  &-link {
+    text-decoration: none;
+    color: black;
+  }
+
   &-button {
+    margin-bottom: 5px;
+    border-radius: 5px;
     padding: 10px 15px;
     border: 1px solid black;
+    text-decoration: none;
   }
 }
 

@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
-import "./login.scss";
+import "./signin.scss";
 
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import LoginError from "../Error/LoginError";
 
-export default function Login() {
+export default function Signin() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { login } = useAuth();
@@ -30,7 +30,7 @@ export default function Login() {
   return (
     <>
       <div className="login">
-        <p className="login-headline">Login</p>
+        <p className="login-headline">Sign In</p>
 
         {loading ? "loading" : null}
         {error && error}
@@ -57,7 +57,7 @@ export default function Login() {
             />
           </label>
 
-          <input type="submit" value="Login" className="login_button" />
+          <input type="submit" value="Sing in" className="login_button" />
         </form>
       </div>
     </>

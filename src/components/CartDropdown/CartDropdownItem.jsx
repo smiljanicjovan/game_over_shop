@@ -5,17 +5,19 @@ import "./cartdropdownitem.scss";
 export default function CartDropdownItem({ item }) {
   const { removeItem } = useContext(CartContext);
 
-  // const totalPrice = item.reduce(
-  //   (total, itemPrice) => total + itemPrice.salePrice,
-  //   0
-  // );
-  // console.log(totalPrice);
   return (
     <>
       <div className="cartDropdownItems">
         <img src={item.thumb} alt="product img" className="img" />
-        <p className="cartDropdownItems-title">{item.title}</p>
-        <p>{item.salePrice} €</p>
+        <p className="cartDropdownItems-title">
+          {item.title}
+          {item.external}
+        </p>
+
+        <p>
+          {item.salePrice}
+          {item.cheapest}€
+        </p>
 
         <button
           onClick={() => removeItem(item.gameID)}

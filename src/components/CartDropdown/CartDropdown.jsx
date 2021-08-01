@@ -9,6 +9,11 @@ export default function CartDropdown() {
   const { showCart, cartItems, showHideCart, closeDropdown } =
     useContext(CartContext);
 
+  const totalPrice = cartItems.reduce(
+    (total, itemPrice) => total + +itemPrice.salePrice,
+    0
+  );
+
   return (
     <>
       {!showCart ? null : (
@@ -29,11 +34,17 @@ export default function CartDropdown() {
             )}
           </div>
           {cartItems.length === 0 ? null : (
-            <Link to="/cart">
-              <p className="dropdown-button" onClick={closeDropdown}>
-                Go to checkout
+            <>
+              <p>
+                Total price is:
+                {totalPrice} €
               </p>
-            </Link>
+              <Link to="/cart" className="dropdown-link">
+                <p className="dropdown-button" onClick={closeDropdown}>
+                  Go to checkout
+                </p>
+              </Link>
+            </>
           )}
         </div>
       )}

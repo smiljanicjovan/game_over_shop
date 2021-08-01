@@ -6,7 +6,9 @@ import DealPage from "./pages/DealPage/DealPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import SingleGamePage from "./pages/SingleGamePage/SingleGamePage";
 import CartPage from "./pages/CartPage/CartPage";
-import SigninAndLogin from "./pages/SigninAndLogin/SigninAndLogin";
+
+import SignUp from "./pages/Signup/Signup";
+import SignIn from "./pages/Signin/Signin";
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
           <Route path="/deals" component={DealPage} exact />
           <Route path="/search" component={SearchPage} exact />
           <Route path="/cart" component={CartPage} exact />
-          <Route path="/login" component={SigninAndLogin} exact />
+          <Route path="/signup" component={SignUp} exact />
+          <Route path="/signin" component={SignIn} exact />
           <Route path="/:id" component={SingleGamePage} exact />
         </Switch>
       </Router>

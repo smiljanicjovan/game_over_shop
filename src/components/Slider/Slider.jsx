@@ -11,6 +11,8 @@ export default function Slider() {
         autoPlay={true}
         swipeable={true}
         emulateTouch={true}
+        interval={5000}
+        infiniteLoop={true}
       >
         <div>
           <img src="./assets/slider2.jpg" alt="slider" />

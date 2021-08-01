@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
 import "./signup.scss";
+
 import Loader from "react-loader-spinner";
 import { useAuth } from "../../context/AuthContext";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   SignupPasswordError,
   SignupError,
@@ -14,7 +15,7 @@ export default function Signup() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
 
-  const { signup } = useAuth();
+  const { signup, signInWithGoogle } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -41,10 +42,23 @@ export default function Signup() {
     setLoading(false);
   }
 
+  async function handleGoogle(e) {
+    e.preventDefault();
+    try {
+      setError("");
+      setLoading(true);
+      await signInWithGoogle();
+      history.push("/");
+    } catch {
+      setError(<SignupError />);
+    }
+    setLoading(false);
+  }
+
   return (
     <>
       <div className="signup">
-        <p className="login-headline">SignUp</p>
+        <p className="login-headline">Sign up</p>
         {!loading ? null : (
           <Loader type="Puff" color="#00BFFF" height={100} width={100} />
         )}
@@ -60,7 +74,6 @@ export default function Signup() {
               placeholder="Type your email"
             />
           </label>
-
           <label className="signup_form-group">
             Password:
             <input
@@ -68,22 +81,28 @@ export default function Signup() {
               name="password"
               ref={passwordRef}
               className="signup_form-group-input"
-              placeholder="Type your password again"
+              placeholder="Type your password"
             />
           </label>
-
           <label className="signup_form-group">
-            Password-Confirm:
+            Confirm Password:
             <input
               type="password"
               name="password"
               ref={passwordConfirmRef}
               className="signup_form-group-input"
-              placeholder="Type your password again"
+              placeholder="Please confirm password"
             />
           </label>
-
           <input type="submit" value="Sign Up" className="login_button" />
+          or
+          <button className="login_button" onClick={handleGoogle}>
+            Sign up with google
+          </button>
+          <div className="signin">
+            Alreay have and Account?
+            <Link to="/signin">SignIn</Link>
+          </div>
         </form>
       </div>
     </>
