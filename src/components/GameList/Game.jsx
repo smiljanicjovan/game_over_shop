@@ -27,7 +27,7 @@ export default function Game({ value }) {
           <span>{value.normalPrice - value.isOnSale}€</span>
         </p>
       </div>
-      <div className="gameitem-id">Steam ID is: {value.steamAppID}</div>
+      <div className="gameitem-id">Steam ID: {value.steamAppID}</div>
       <div className="gameitem-button">
         <button
           className="gameitem-button_btn"

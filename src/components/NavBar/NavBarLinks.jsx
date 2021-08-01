@@ -10,10 +10,10 @@ export default function NavBarLinks() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/deals">Best Deals</Link>
           </li>
           <li>
-            <Link to="/deals">Deals</Link>
+            <Link to="/stores">Stores</Link>
           </li>
         </ul>
       </div>

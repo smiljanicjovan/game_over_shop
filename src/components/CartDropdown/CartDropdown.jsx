@@ -17,7 +17,7 @@ export default function CartDropdown() {
             <p className="dropdown-item_close" onClick={showHideCart}>
               &times;
             </p>
-            {console.log(cartItems.length)}
+
             {cartItems.length === 0 ? (
               <p className="dropdown-item_text">Your cart is empty.</p>
             ) : (

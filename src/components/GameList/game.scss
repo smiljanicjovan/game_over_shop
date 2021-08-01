@@ -1,15 +1,16 @@
 .gameitem {
-  width: 330px;
-  background-color: rgba(255, 255, 255, 0.63);
-  margin: 25px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.767);
+  margin: 40px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 15px;
 
   &-title {
+    width: 80%;
+    margin: 20px auto;
     font-size: 24px;
     color: black;
     padding-top: 10px;
-    margin: 20px 0;
   }
   &-image {
     position: relative;
@@ -20,8 +21,8 @@
 
     &-rating {
       position: absolute;
-      top: -10px;
-      right: 21%;
+      top: -7%;
+      right: 4%;
       padding-top: 5px;
 
       color: white;
@@ -73,12 +74,14 @@
   }
 
   &-button {
-    padding-bottom: 25px;
+    padding: 15px 0;
 
     &_btn {
-      padding: 10px 20px;
+      color: white;
+      background-color: rgb(98, 148, 241);
+      padding: 15px 30px;
       border-radius: 5px;
-      border: 2px solid black;
+      border: none;
       cursor: pointer;
     }
   }
