@@ -1,12 +1,16 @@
 import React from "react";
+import "./signin.scss";
+
 import NavBar from "../../components/NavBar/NavBar";
-import Signin from "../../components/Signin/Signin";
+import SigninComponent from "../../components/Signin/SigninComponent";
 
 export default function SignIn() {
   return (
     <div>
       <NavBar />
-      <Signin />
+      <div className="signIN">
+        <SigninComponent />
+      </div>
     </div>
   );
 }

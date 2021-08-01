@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import "./signin.scss";
+import "./signincomponent.scss";
 
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import LoginError from "../Error/LoginError";
 
@@ -29,35 +29,39 @@ export default function Signin() {
 
   return (
     <>
-      <div className="login">
-        <p className="login-headline">Sign In</p>
+      <div className="signin">
+        <p className="signin-headline">Sign In</p>
 
         {loading ? "loading" : null}
         {error && error}
-        <form onSubmit={handleSubmit} className="login_form">
-          <label className="login_form-group">
+        <form onSubmit={handleSubmit} className="signin_form">
+          <label className="signin_form-group">
             Email:
             <input
               type="email"
               name="email"
               ref={emailRef}
-              className="login_form-group-input "
+              className="signin_form-group-input "
               placeholder="Type your email"
             />
           </label>
 
-          <label className="login_form-group">
+          <label className="signin_form-group">
             Password:
             <input
               type="password"
               name="password"
               ref={passwordRef}
-              className="login_form-group-input"
+              className="signin_form-group-input"
               placeholder="Type your password"
             />
           </label>
 
-          <input type="submit" value="Sing in" className="login_button" />
+          <input type="submit" value="Sing in" className="signin_button" />
+          <div className="signin_link">
+            Don't have an Account?
+            <Link to="/signup"> SignUp</Link>
+          </div>
         </form>
       </div>
     </>
