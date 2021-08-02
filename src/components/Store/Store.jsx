@@ -1,26 +1,17 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+import { Link } from "react-router-dom";
+import "./store.scss";
 
-export default function Store() {
-  const [value, setValue] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://www.cheapshark.com/api/1.0/stores")
-      .then(res => setValue(res.data))
-      .catch(err => {
-        console.log(err);
-      });
-  }, []);
+export default function Store({ store }) {
   return (
-    <div>
-      {value.map(a => (
+    <div className="store">
+      <Link to={`/${store.storeID}`}>
+        <p>{store.storeName}</p>
         <img
-          key={a.images.banner}
-          src={"https://www.cheapshark.com" + a.images.banner}
-          alt=""
+          src={`https://www.cheapshark.com${store.images.logo}`}
+          alt="store"
         />
-      ))}
+      </Link>
     </div>
   );
 }

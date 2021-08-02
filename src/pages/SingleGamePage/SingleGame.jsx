@@ -1,12 +1,12 @@
 import React from "react";
 import "./singlegame.scss";
 
-import NavBar from "../NavBar/NavBar";
-import { useContext } from "react";
-import CartContext from "../../context/Cart/CartContext";
+import NavBar from "../../components/NavBar/NavBar";
+// import { useContext } from "react";
+// import CartContext from "../../context/Cart/CartContext";
 
 export default function SingleGame({ game }) {
-  const { addToCart } = useContext(CartContext);
+  // const { addToCart } = useContext(CartContext);
 
   return (
     <>
@@ -29,9 +29,9 @@ export default function SingleGame({ game }) {
             <p className="game-steamId">Steam ID: {game.steamAppID}</p>
           </div>
 
-          <button className="game_button" onClick={() => addToCart(game)}>
+          {/* <button className="game_button" onClick={() => addToCart(game)}>
             ADD TO CART
-          </button>
+          </button> */}
         </div>
       </div>
     </>

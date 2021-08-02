@@ -19,6 +19,7 @@ const CartReducer = (state, action) => {
         cartItems: [...state.cartItems, action.payload],
       };
     }
+
     case REMOVE_ITEM: {
       return {
         ...state,
@@ -33,6 +34,7 @@ const CartReducer = (state, action) => {
         showCart: !state.showCart,
       };
     }
+
     default:
       return state;
   }

@@ -4,7 +4,7 @@ import "./homepage.scss";
 import GamesList from "../../components/GameList/GamesList";
 import NavBar from "../../components/NavBar/NavBar";
 import Slider from "../../components/Slider/Slider";
-import Test from "../../Test";
+
 // import Store from "../../components/Store/Store";
 
 export default function HomePage() {
@@ -16,7 +16,7 @@ export default function HomePage() {
       </div>
       <Slider />
       <GamesList />
-      <Test />
+
       {/* <Store /> */}
     </>
   );

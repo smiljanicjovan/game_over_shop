@@ -1,0 +1,21 @@
+.store {
+  width: 250px;
+  margin: 30px auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-align: center;
+    p {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 150px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import SingleItem from "../../components/SingleGame/SingleGame";
+import SingleItem from "./SingleGame";
 
 export default function SingleGamePage() {
   const [value, setValue] = useState([]);

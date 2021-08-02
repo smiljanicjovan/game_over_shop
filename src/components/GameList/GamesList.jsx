@@ -9,7 +9,7 @@ export default function GamesList() {
 
   useEffect(() => {
     axios
-      .get(`https://www.cheapshark.com/api/1.0/deals?storeID=1`)
+      .get(`https://www.cheapshark.com/api/1.0/deals?storeID=15`)
       .then(res => setValue(res.data))
       .catch(err => {
         console.log(err);

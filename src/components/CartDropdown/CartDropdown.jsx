@@ -35,9 +35,9 @@ export default function CartDropdown() {
           </div>
           {cartItems.length === 0 ? null : (
             <>
-              <p>
+              <p className="totalprice">
                 Total price is:
-                {totalPrice} €
+                <span>{totalPrice} €</span>
               </p>
               <Link to="/cart" className="dropdown-link">
                 <p className="dropdown-button" onClick={closeDropdown}>

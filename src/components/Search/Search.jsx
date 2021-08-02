@@ -10,7 +10,7 @@ export default function Search() {
 
   useEffect(() => {
     axios
-      .get(`https://www.cheapshark.com/api/1.0/games?title=${search}`)
+      .get(`https://www.cheapshark.com/api/1.0/deals?title=${search}`)
       .then(res => setValue(res.data))
       .catch(err => {
         console.log(err);
@@ -18,7 +18,7 @@ export default function Search() {
   }, [search]);
 
   const filtered = value.filter(val => {
-    return val.external.includes(search);
+    return val.title.includes(search);
   });
 
   return (
@@ -31,9 +31,11 @@ export default function Search() {
         }}
         className="search-bar"
       />
-      {filtered.slice(-7).map(filter => (
-        <SearchValue key={filter.gameID} item={filter} />
-      ))}
+      <div className="search_val">
+        {filtered.slice(-7).map((filter, idx) => (
+          <SearchValue key={idx} item={filter} />
+        ))}
+      </div>
     </div>
   );
 }
