@@ -41,7 +41,7 @@ export default function CartDropdown() {
               </p>
               <Link to="/cart" className="dropdown-link">
                 <p className="dropdown-button" onClick={closeDropdown}>
-                  Go to checkout
+                  Go to Cart
                 </p>
               </Link>
             </>

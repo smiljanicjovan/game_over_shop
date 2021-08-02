@@ -6,4 +6,21 @@
   min-height: 100px;
   margin-top: 200px;
   border-radius: 4px;
+
+  &_table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid #000;
+
+    &-title {
+      width: 200px;
+      text-align: center;
+    }
+  }
 }
