@@ -7,6 +7,7 @@ import {
   ADD_TO_CART,
   REMOVE_ITEM,
   CLOSE_DROPDOWN,
+  DECREASE_ITEM,
 } from "../Types";
 
 const CartState = ({ children }) => {
@@ -25,12 +26,15 @@ const CartState = ({ children }) => {
     dispatch({ type: SHOW_HIDE_CART });
   };
 
-  const removeItem = gameID => {
-    dispatch({ type: REMOVE_ITEM, payload: gameID });
+  const removeItem = item => {
+    dispatch({ type: REMOVE_ITEM, payload: item });
   };
 
   const closeDropdown = () => {
     dispatch({ type: CLOSE_DROPDOWN });
+  };
+  const decreaseItem = item => {
+    dispatch({ type: DECREASE_ITEM, payload: item });
   };
 
   return (
@@ -42,6 +46,7 @@ const CartState = ({ children }) => {
         showHideCart,
         removeItem,
         closeDropdown,
+        decreaseItem,
       }}
     >
       {children}

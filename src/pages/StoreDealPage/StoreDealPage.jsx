@@ -26,8 +26,17 @@ export default function StoreDealPage() {
       <NavBar />
       {value.length === 0 ? (
         <div className="loader_deal">
-          <Loader type="Circles" color="red" height={200} width={200} />
-          <p>sorry</p>
+          <Loader
+            type="Circles"
+            color="red"
+            height={200}
+            width={200}
+            className="loaderrr"
+          />
+          <p>
+            If page don't load for 5 seconds Store is probably down :( <br />{" "}
+            Please try again later!
+          </p>
         </div>
       ) : (
         <>

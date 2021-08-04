@@ -9,7 +9,7 @@
   position: absolute;
   right: 50px;
 
-  min-width: 350px;
+  min-width: 450px;
   min-height: 200px;
   z-index: 200;
   border: 1px solid black;
@@ -31,14 +31,19 @@
 
   &-link {
     text-decoration: none;
-    color: black;
+    color: white;
+
+    width: 65%;
+    text-align: center;
+    background: #0099ff;
+    margin: 8px;
+    border-radius: 5px;
   }
 
   &-button {
-    margin-bottom: 5px;
     border-radius: 5px;
     padding: 10px 15px;
-    border: 1px solid black;
+
     text-decoration: none;
   }
 }
@@ -46,15 +51,19 @@
 #droop {
   display: flex;
   flex-direction: column;
+  padding: 10px 20px;
 }
-
-.totalprice {
+.dropdorn_price {
   width: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: #0099ff;
   margin: 10px 0;
-  border: 1px solid black;
+  font-weight: bold;
+
   span {
-    margin-left: 5px;
-    font-weight: bold;
+    font-size: 20px;
   }
 }

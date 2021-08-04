@@ -15,7 +15,10 @@ export default function NavBarProperty() {
   const { currentUser, logout } = useAuth();
   const [error, setError] = useState();
   const history = useHistory();
-
+  const cartItemCount = cartItems.reduce(
+    (acc, cartItem) => acc + cartItem.quantity,
+    0
+  );
   async function handleLogout() {
     setError("");
 
@@ -49,7 +52,7 @@ export default function NavBarProperty() {
               <div className="cart-icon">
                 <Bag className="cart-icon-svg" />
                 <div className="cart-icon-length">
-                  {cartItems.length > 0 ? cartItems.length : null}
+                  {cartItems.length > 0 ? cartItemCount : null}
                 </div>
               </div>
             </div>

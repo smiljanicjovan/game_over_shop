@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import "./cartdropdown.scss";
 
-import CartContext from "../../context/Cart/CartContext";
 import { Link } from "react-router-dom";
+
+import CartContext from "../../context/Cart/CartContext";
 import CartDropdownItem from "./CartDropdownItem";
 
 export default function CartDropdown() {
@@ -10,7 +11,7 @@ export default function CartDropdown() {
     useContext(CartContext);
 
   const totalPrice = cartItems.reduce(
-    (total, itemPrice) => total + +itemPrice.salePrice,
+    (total, itemPrice) => total + +itemPrice.salePrice * itemPrice.quantity,
     0
   );
 
@@ -35,13 +36,13 @@ export default function CartDropdown() {
           </div>
           {cartItems.length === 0 ? null : (
             <>
-              <p className="totalprice">
-                Total price is:
-                <span>{totalPrice} €</span>
-              </p>
-              <Link to="/cart" className="dropdown-link">
+              <div className="dropdorn_price">
+                <p className="totalprice">Total price is:</p>
+                <span>{totalPrice.toFixed(2)}€</span>
+              </div>
+              <Link to="/checkout" className="dropdown-link">
                 <p className="dropdown-button" onClick={closeDropdown}>
-                  Go to Cart
+                  Go to Checkout
                 </p>
               </Link>
             </>

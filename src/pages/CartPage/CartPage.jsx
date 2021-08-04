@@ -1,44 +1,43 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./cartpage.scss";
 
 import NavBar from "../../components/NavBar/NavBar";
 import CartContext from "../../context/Cart/CartContext";
 import CartItem from "./CartItem";
-import StripeContainer from "../../components/Stripe/StripeContainer";
+
+import StripeButton from "../../components/Stripe/StripeButton";
 
 export default function CartPage() {
   const { cartItems } = useContext(CartContext);
-  const [showCart, setShowCart] = useState(false);
   const totalPrice = cartItems.reduce(
-    (total, itemPrice) => total + +itemPrice.salePrice,
+    (total, itemPrice) => total + +itemPrice.salePrice * itemPrice.quantity,
     0
   );
 
   return (
     <>
       <NavBar />
-      {!showCart ? (
-        <>
-          <div className="cartwrap">
-            <div className="cartwrap_table">
-              <p className="cartwrap_table-title">title</p>
-              <p>price</p>
-              <p>image</p>
-              <p>remove</p>
+      <>
+        <div className="cartwrap">
+          {cartItems.map(item => (
+            <CartItem key={item.gameID} item={item} />
+          ))}
+          <div className="paying">
+            <div className="paying_totalprice">
+              Total is: <span>{totalPrice.toFixed(2)} €</span>
             </div>
-
-            {cartItems.map(item => (
-              <CartItem key={item.gameID} item={item} />
-            ))}
-            <div className="totalprice">Total is: {totalPrice} €</div>
-            {cartItems.length === 0 ? null : (
-              <button onClick={() => setShowCart(true)}>Pay now</button>
-            )}
+            <div className="paying_button">
+              <StripeButton price={totalPrice} />
+            </div>
           </div>
-        </>
-      ) : (
-        <StripeContainer />
-      )}
+        </div>
+      </>
+      <div className="test-warning">
+        **Cart number for testing**
+        <br />
+        Card Number :4242 4242 4242 4242
+        <br /> Exp: 01/23 CVV: 123
+      </div>
     </>
   );
 }

@@ -2,25 +2,23 @@ import React, { useContext } from "react";
 import CartContext from "../../context/Cart/CartContext";
 import "./cartdropdownitem.scss";
 
-export default function CartDropdownItem({ item }) {
+export default function CartDropdownItem({
+  item: { thumb, title, quantity, salePrice, gameID },
+}) {
   const { removeItem } = useContext(CartContext);
 
   return (
     <>
       <div className="cartDropdownItems">
-        <img src={item.thumb} alt="product img" className="img" />
-        <p className="cartDropdownItems-title">
-          {item.title}
-          {item.external}
-        </p>
+        <img src={thumb} alt="product img" className="img" />
+        <p className="cartDropdownItems-title">{title}</p>
 
         <p>
-          {item.salePrice}
-          {item.cheapest}€
+          {quantity} x {(salePrice * quantity).toFixed(2)}€
         </p>
 
         <button
-          onClick={() => removeItem(item.gameID)}
+          onClick={() => removeItem(gameID)}
           className="cartDropdownItems-button"
         >
           &#10006;

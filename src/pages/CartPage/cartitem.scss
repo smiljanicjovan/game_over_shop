@@ -3,16 +3,49 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  padding: 20px 50px;
+  margin: auto;
 
-  margin: 30px;
-  padding: 20px 0;
-
-  &-title {
-    width: 200px;
+  &-about {
+    font-size: 18px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   img {
     width: 120px;
     height: 70px;
+  }
+
+  &_remove {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transform: translateX(60px);
+  }
+}
+
+.quantity {
+  width: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-size: 20px;
+    padding: 5px;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
   }
 }

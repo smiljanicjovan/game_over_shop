@@ -22,7 +22,7 @@ function App() {
           <Route path="/stores" component={StorePage} exact />
 
           <Route path="/search" component={SearchPage} exact />
-          <Route path="/cart" component={CartPage} exact />
+          <Route path="/checkout" component={CartPage} exact />
           <Route path="/signup" component={SignUp} exact />
           <Route path="/signin" component={SignIn} exact />
 

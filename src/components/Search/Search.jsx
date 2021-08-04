@@ -6,7 +6,7 @@ import SearchValue from "./SearchValue";
 
 export default function Search() {
   const [value, setValue] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("0");
 
   useEffect(() => {
     axios
@@ -18,9 +18,9 @@ export default function Search() {
   }, [search]);
 
   const filtered = value.filter(val => {
-    return val.title.includes(search);
+    return search.length === 0 ? "" : val.title.includes(search);
   });
-
+  console.log(search.length);
   return (
     <div className="search">
       <input

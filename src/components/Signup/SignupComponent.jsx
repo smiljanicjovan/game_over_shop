@@ -94,10 +94,14 @@ export default function Signup() {
               placeholder="Please confirm password"
             />
           </label>
-          <input type="submit" value="Sign Up" className="signup_button" />
+          <input
+            type="submit"
+            value="Create account"
+            className="signup_button"
+          />
           or
-          <button className="signup_button" onClick={handleGoogle}>
-            Sign up with google
+          <button className="signup_button google" onClick={handleGoogle}>
+            Continue with Google
           </button>
           <div className="signup_link">
             Alreay have an Account?

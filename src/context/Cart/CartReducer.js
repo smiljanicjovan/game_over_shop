@@ -3,7 +3,9 @@ import {
   ADD_TO_CART,
   REMOVE_ITEM,
   CLOSE_DROPDOWN,
+  DECREASE_ITEM,
 } from "../Types";
+import { addItemToCart, decreaseItemCart } from "./CartUtils";
 
 const CartReducer = (state, action) => {
   switch (action.type) {
@@ -16,7 +18,7 @@ const CartReducer = (state, action) => {
     case ADD_TO_CART: {
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload],
+        cartItems: addItemToCart(state.cartItems, action.payload),
       };
     }
 
@@ -28,6 +30,14 @@ const CartReducer = (state, action) => {
         ),
       };
     }
+
+    case DECREASE_ITEM: {
+      return {
+        ...state,
+        cartItems: decreaseItemCart(state.cartItems, action.payload),
+      };
+    }
+
     case CLOSE_DROPDOWN: {
       return {
         ...state,
