@@ -5,8 +5,6 @@ import GamesList from "../../components/GameList/GamesList";
 import NavBar from "../../components/NavBar/NavBar";
 import Slider from "../../components/Slider/Slider";
 
-// import Store from "../../components/Store/Store";
-
 export default function HomePage() {
   return (
     <>
@@ -16,8 +14,6 @@ export default function HomePage() {
       </div>
       <Slider />
       <GamesList />
-
-      {/* <Store /> */}
     </>
   );
 }
