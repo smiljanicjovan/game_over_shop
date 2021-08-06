@@ -100,14 +100,14 @@ export default function Signup() {
             className="signup_button"
           />
           or
-          <button className="signup_button google" onClick={handleGoogle}>
-            Continue with Google
-          </button>
           <div className="signup_link">
             Alreay have an Account?
             <Link to="/signin"> SignIn</Link>
           </div>
         </form>
+        <button className="signup_button google" onClick={handleGoogle}>
+          Continue with Google
+        </button>
       </div>
     </>
   );
