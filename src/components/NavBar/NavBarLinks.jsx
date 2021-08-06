@@ -7,7 +7,7 @@ export default function NavBarLinks() {
       <div className="navbar-links">
         <ul>
           <li>
-            <Link to="/">Homea</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/deals">Best Deals</Link>

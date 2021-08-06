@@ -18,7 +18,7 @@ export default function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password);
   }
   function signInWithGoogle() {
-    var provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new firebase.auth.GoogleAuthProvider();
     return auth.signInWithPopup(provider);
   }
 
