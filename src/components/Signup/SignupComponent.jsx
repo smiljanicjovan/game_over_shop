@@ -14,8 +14,8 @@ export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  // signInWithGoogle
-  const { signup } = useAuth();
+
+  const { signup, signInWithGoogle } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -42,17 +42,17 @@ export default function Signup() {
     setLoading(false);
   }
 
-  // async function handleGoogle() {
-  //   try {
-  //     setError("");
-  //     setLoading(true);
-  //     await signInWithGoogle();
-  //     history.push("/");
-  //   } catch {
-  //     setError(<SignupError />);
-  //   }
-  //   setLoading(false);
-  // }
+  async function handleGoogle() {
+    try {
+      setError("");
+      setLoading(true);
+      await signInWithGoogle();
+      history.push("/");
+    } catch {
+      setError(<SignupError />);
+    }
+    setLoading(false);
+  }
 
   return (
     <>
@@ -103,9 +103,9 @@ export default function Signup() {
             Alreay have an Account?
             <Link to="/signin"> SignIn</Link>
           </div>
-          {/* <button className="signup_button google" onClick={handleGoogle}>
+          <button className="signup_button google" onClick={handleGoogle}>
             Continue with Google
-          </button> */}
+          </button>
         </form>
       </div>
     </>

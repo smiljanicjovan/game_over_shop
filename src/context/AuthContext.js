@@ -12,7 +12,9 @@ export default function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 
   function signup(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
+    return auth
+      .createUserWithEmailAndPassword(email, password)
+      .catch(error => alert(error));
   }
   function login(email, password) {
     return auth.signInWithEmailAndPassword(email, password);
