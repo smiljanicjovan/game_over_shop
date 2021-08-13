@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import "./property.scss";
 
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -39,7 +40,7 @@ export default function NavBarProperty() {
           <li>
             <Link to="/search">
               <div className="nav-search">
-                Search
+                <span className="nav_text_prop">Search</span>
                 <div className="nav-search-icon">
                   <Search className="nav-search-icon-svg" />
                 </div>
@@ -48,7 +49,7 @@ export default function NavBarProperty() {
           </li>
           <li>
             <div className="cart" onClick={showHideCart}>
-              Cart
+              <span className="nav_text_prop">Cart</span>
               <div className="cart-icon">
                 <Bag className="cart-icon-svg" />
                 <div className="cart-icon-length">
@@ -61,7 +62,7 @@ export default function NavBarProperty() {
             <li>
               <Link to="/signup">
                 <div className="nav-search">
-                  Sign Up
+                  <span className="nav_text_prop">Sign Up</span>
                   <div className="nav-search-icon">
                     <Login className="nav-search-icon-svg" />
                   </div>

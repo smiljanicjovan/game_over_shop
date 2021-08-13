@@ -1,16 +1,16 @@
 import React from "react";
 import "./navbar.scss";
 
-import NavBarLinks from "./NavBarLinks";
-import NavBarLogo from "./NavBarLogo";
-import NavBarProperty from "./NavBarProperty";
+import Links from "./Links";
+import Logo from "./Logo";
+import Property from "./Property";
 
 const NavBar = () => {
   return (
     <nav className="navbar">
-      <NavBarLinks />
-      <NavBarLogo />
-      <NavBarProperty />
+      <Links />
+      <Logo />
+      <Property />
     </nav>
   );
 };
