@@ -9,6 +9,10 @@
     width: 260px;
   }
 
+  @media (max-width: 1024px) {
+    margin: 30px;
+  }
+
   &-title {
     width: 80%;
     margin: 20px auto;

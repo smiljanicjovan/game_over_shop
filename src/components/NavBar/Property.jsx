@@ -42,7 +42,7 @@ export default function NavBarProperty() {
               <div className="nav-search">
                 <span className="nav_text_prop">Search</span>
                 <div className="nav-search-icon">
-                  <Search className="nav-search-icon-svg" />
+                  <Search className="cart-icon-svg" />
                 </div>
               </div>
             </Link>
@@ -64,7 +64,7 @@ export default function NavBarProperty() {
                 <div className="nav-search">
                   <span className="nav_text_prop">Sign Up</span>
                   <div className="nav-search-icon">
-                    <Login className="nav-search-icon-svg" />
+                    <Login className="cart-icon-svg" />
                   </div>
                 </div>
               </Link>
