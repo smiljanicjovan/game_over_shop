@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import CartContext from "./CartContext";
 import CartReducer from "./CartReducer";
 
@@ -10,10 +10,12 @@ import {
   DECREASE_ITEM,
 } from "../Types";
 
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("item") || "[]");
+
 const CartState = ({ children }) => {
   const initialState = {
     showCart: false,
-    cartItems: [],
+    cartItems: cartFromLocalStorage,
   };
 
   const [state, dispatch] = useReducer(CartReducer, initialState);
@@ -36,6 +38,10 @@ const CartState = ({ children }) => {
   const decreaseItem = item => {
     dispatch({ type: DECREASE_ITEM, payload: item });
   };
+
+  useEffect(() => {
+    localStorage.setItem("item", JSON.stringify(state.cartItems));
+  }, [state.cartItems]);
 
   return (
     <CartContext.Provider
