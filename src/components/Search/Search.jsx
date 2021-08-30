@@ -6,7 +6,7 @@ import SearchValue from "./SearchValue";
 
 export default function Search() {
   const [value, setValue] = useState([]);
-  const [search, setSearch] = useState("0");
+  const [search, setSearch] = useState("batman");
 
   useEffect(() => {
     axios

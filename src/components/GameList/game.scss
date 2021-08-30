@@ -25,6 +25,7 @@
     img {
       width: 200px;
       height: 100px;
+      border-radius: 5px;
     }
 
     &-rating {
@@ -70,6 +71,8 @@
     font-size: 12px;
     color: gray;
     font-style: italic;
+    text-align: end;
+    padding-right: 10px;
   }
 
   &-button {

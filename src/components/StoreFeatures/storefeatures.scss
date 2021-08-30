@@ -1,0 +1,18 @@
+.stores_home {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 0;
+}
+
+.store_features {
+  width: 80%;
+  margin: 100px auto 20px auto;
+
+  border-top: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.stores_link {
+  text-decoration: none;
+  color: #000;
+}

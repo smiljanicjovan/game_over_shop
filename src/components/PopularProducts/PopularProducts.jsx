@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./gameslist.scss";
+import "./popular.scss";
 
-import { ReactComponent as Fire } from "../../assets/fire.svg";
-
+import { ReactComponent as Best } from "../../assets/best.svg";
 import axios from "axios";
-import Game from "./Game";
 import { Link } from "react-router-dom";
+import Game from "../GameList/Game";
 
-export default function GamesList() {
+export default function PopularProducts() {
   const [value, setValue] = useState([]);
 
   useEffect(() => {
@@ -21,17 +20,19 @@ export default function GamesList() {
 
   return (
     <>
-      <h1 className="gamelist-text">
-        <Fire className="hot_deals" /> Hot Deals <Fire className="hot_deals" />
+      <h1 className="popular-text">
+        <Best className="popular_svg" />
+        Popular Products
+        <Best className="popular_svg" />
       </h1>
       <div className="gameslist">
-        {value.slice(24, -30).map((game, idx) => (
+        {value.slice(2, -52).map((game, idx) => (
           <Game key={idx} value={game} />
         ))}
       </div>
       <p>
         <Link className="allDeals" to="/deals">
-          See all deals &#10140;
+          See all products &#10140;
         </Link>
       </p>
     </>
