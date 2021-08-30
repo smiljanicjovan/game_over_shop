@@ -18,16 +18,10 @@
         }
       }
 
-      .nav-search {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        &-icon {
-          &-svg {
-            height: 35px;
-            width: 35px;
-          }
+      .cart-icon {
+        &-svg {
+          height: 25px;
+          width: 25px;
         }
       }
 
@@ -44,6 +38,7 @@
 
           &-length {
             color: white;
+            font-size: 14px;
             position: absolute;
             top: 50%;
             left: 50%;

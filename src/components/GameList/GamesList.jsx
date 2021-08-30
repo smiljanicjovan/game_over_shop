@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./gameslist.scss";
 
+import { ReactComponent as Fire } from "../../assets/fire.svg";
+
 import axios from "axios";
 import Game from "./Game";
 
@@ -18,9 +20,11 @@ export default function GamesList() {
 
   return (
     <>
-      <h1 className="gamelist-text">Some of best deals for today</h1>
+      <h1 className="gamelist-text">
+        <Fire className="hot_deals" /> Hot Deals <Fire className="hot_deals" />
+      </h1>
       <div className="gameslist">
-        {value.slice(-8).map((game, idx) => (
+        {value.slice(18, -30).map((game, idx) => (
           <Game key={idx} value={game} />
         ))}
       </div>

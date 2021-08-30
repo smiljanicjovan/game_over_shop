@@ -1,11 +1,12 @@
 import React from "react";
+import "./slider.scss";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 export default function Slider() {
   return (
-    <>
+    <div className="slider">
       <Carousel
         showThumbs={false}
         autoPlay={true}
@@ -24,6 +25,6 @@ export default function Slider() {
           <img src="./assets/slider1.jpg" alt="slider" />
         </div>
       </Carousel>
-    </>
+    </div>
   );
 }

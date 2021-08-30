@@ -7,27 +7,23 @@ export default function Game({ value }) {
 
   return (
     <div className="gameitem">
-      <div className="gameitem-title">{value.title}</div>
       <div className="gameitem-image">
-        {<img src={value.thumb} alt="game" />}
+        <img src={value.thumb} alt="game" />
         <div className="gameitem-image-rating">{value.dealRating}</div>
+        <div className="gameitem-id">Steam ID: {value.steamAppID}</div>
       </div>
+      <div className="gameitem-title">{value.title}</div>
+      <div className="gameitem-desc">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      </div>
+
       <div className="gameitem-price">
-        <p className="gameitem-price-sale">
-          Sale Price:
-          <span>{value.isOnSale === "1" ? value.salePrice : null}€</span>
-        </p>
-        <p className="gameitem-price-normal">
-          Regular Price: <span>{value.normalPrice}€</span>
-        </p>
+        <span className="gameitem-price_normal">{value.normalPrice}€</span>
+        <span className="gameitem-price_sale">
+          {value.isOnSale === "1" ? value.salePrice : null}€
+        </span>
       </div>
-      <div className="gameitem-savings">
-        <p className="gameitem-price-save">
-          You Will Save:
-          <span>{value.normalPrice - value.isOnSale}€</span>
-        </p>
-      </div>
-      <div className="gameitem-id">Steam ID: {value.steamAppID}</div>
+
       <div className="gameitem-button">
         <button
           className="gameitem-button_btn"

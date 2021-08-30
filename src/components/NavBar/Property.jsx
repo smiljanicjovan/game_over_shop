@@ -39,17 +39,14 @@ export default function NavBarProperty() {
         <ul>
           <li>
             <Link to="/search">
-              <div className="nav-search">
-                <span className="nav_text_prop">Search</span>
-                <div className="nav-search-icon">
-                  <Search className="cart-icon-svg" />
-                </div>
+              <div className="cart-icon">
+                <Search className="cart-icon-svg" />
               </div>
             </Link>
           </li>
+
           <li>
             <div className="cart" onClick={showHideCart}>
-              <span className="nav_text_prop">Cart</span>
               <div className="cart-icon">
                 <Bag className="cart-icon-svg" />
                 <div className="cart-icon-length">
@@ -58,19 +55,15 @@ export default function NavBarProperty() {
               </div>
             </div>
           </li>
-          {!currentUser ? (
-            <li>
+
+          <li>
+            {!currentUser ? (
               <Link to="/signup">
-                <div className="nav-search">
-                  <span className="nav_text_prop">Sign Up</span>
-                  <div className="nav-search-icon">
-                    <Login className="cart-icon-svg" />
-                  </div>
+                <div className="cart-icon">
+                  <Login className="cart-icon-svg" />
                 </div>
               </Link>
-            </li>
-          ) : (
-            <li>
+            ) : (
               <Link to="">
                 <div className="nav-search" onClick={handleLogout}>
                   Loggout
@@ -79,8 +72,8 @@ export default function NavBarProperty() {
                   </div>
                 </div>
               </Link>
-            </li>
-          )}
+            )}
+          </li>
         </ul>
         <CartDropdown />
       </div>
