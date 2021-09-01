@@ -4,7 +4,6 @@ import "./property.scss";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-import CartDropdown from "../CartDropdown/CartDropdown";
 import CartContext from "../../context/Cart/CartContext";
 
 import { ReactComponent as Bag } from "../../assets/cart.svg";
@@ -12,7 +11,7 @@ import { ReactComponent as Search } from "../../assets/search.svg";
 import { ReactComponent as Login } from "../../assets/login.svg";
 
 export default function NavBarProperty() {
-  const { cartItems, showHideCart } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
   const { currentUser, logout } = useAuth();
   const [error, setError] = useState();
   const history = useHistory();
@@ -46,14 +45,14 @@ export default function NavBarProperty() {
           </li>
 
           <li>
-            <div className="cart" onClick={showHideCart}>
+            <Link to="/checkout" className="cart">
               <div className="cart-icon">
                 <Bag className="cart-icon-svg" />
                 <div className="cart-icon-length">
                   {cartItems.length > 0 ? cartItemCount : null}
                 </div>
               </div>
-            </div>
+            </Link>
           </li>
 
           <li>
@@ -64,18 +63,15 @@ export default function NavBarProperty() {
                 </div>
               </Link>
             ) : (
-              <Link to="">
-                <div className="nav-search" onClick={handleLogout}>
-                  Loggout
-                  <div className="nav-search-icon">
-                    <Login className="nav-search-icon-svg" />
-                  </div>
+              <Link to="" onClick={handleLogout}>
+                <div className="cart-icon">
+                  <Login className="cart-icon-svg" />
                 </div>
+                <span className="loggout_text">Logout</span>
               </Link>
             )}
           </li>
         </ul>
-        <CartDropdown />
       </div>
     </>
   );

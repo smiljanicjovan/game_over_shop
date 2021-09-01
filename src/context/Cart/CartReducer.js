@@ -2,7 +2,6 @@ import {
   SHOW_HIDE_CART,
   ADD_TO_CART,
   REMOVE_ITEM,
-  CLOSE_DROPDOWN,
   DECREASE_ITEM,
 } from "../Types";
 import { addItemToCart, decreaseItemCart } from "./CartUtils";
@@ -35,13 +34,6 @@ const CartReducer = (state, action) => {
       return {
         ...state,
         cartItems: decreaseItemCart(state.cartItems, action.payload),
-      };
-    }
-
-    case CLOSE_DROPDOWN: {
-      return {
-        ...state,
-        showCart: !state.showCart,
       };
     }
 

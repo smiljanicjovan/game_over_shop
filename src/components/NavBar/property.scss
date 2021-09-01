@@ -13,8 +13,8 @@
       &:not(:last-child) {
         padding-right: 40px;
 
-        @media (max-width: 700px) {
-          padding-right: 20px;
+        @media (max-width: 800px) {
+          padding-right: 10px;
         }
       }
 
@@ -32,6 +32,21 @@
         color: white;
         text-decoration: none;
         cursor: pointer;
+
+        @media (max-width: 800px) {
+          position: fixed;
+          top: 95%;
+          left: 0;
+          height: 50px;
+
+          background-color: white;
+          border-top: 1px solid #000;
+          width: 100%;
+          z-index: 100;
+
+          display: flex;
+          justify-content: center;
+        }
 
         &-icon {
           position: relative;
@@ -52,6 +67,9 @@
         font-size: 21px;
         color: white;
         text-decoration: none;
+
+        display: flex;
+        flex-direction: column;
       }
       img {
         width: 30px;
@@ -61,23 +79,7 @@
   }
 }
 
-.nav_text_prop {
-  @media (max-width: 1130px) {
-    display: none;
-  }
-}
-
-.cart-icon-svg {
-  height: 35px;
-  width: 35px;
-
-  @media (max-width: 1024px) {
-    height: 30px;
-    width: 30px;
-  }
-
-  @media (max-width: 700px) {
-    height: 25px;
-    width: 25px;
-  }
+.loggout_text {
+  font-size: 14px;
+  color: #000;
 }

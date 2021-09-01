@@ -2,6 +2,7 @@
   width: 80%;
   margin: 50px auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -9,12 +10,21 @@
   border-top: 1px solid #c4c4c4;
   border-bottom: 1px solid #c4c4c4;
 
+  @media (max-width: 766px) {
+    flex-direction: column;
+  }
+
   &_item {
     text-align: center;
+    width: 300px;
+
+    @media (max-width: 800px) {
+      width: 250px;
+    }
 
     &-svg {
-      height: 60px;
-      width: 60px;
+      height: 50px;
+      width: 50px;
     }
 
     &-text {
@@ -27,7 +37,7 @@
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
       &-head {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 800;
       }
 
@@ -36,7 +46,7 @@
         width: 80%;
         margin: 6px auto;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 15px;
       }
 
       &-desc {
@@ -44,7 +54,7 @@
         width: 70%;
         margin: auto;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 13px;
       }
     }
   }

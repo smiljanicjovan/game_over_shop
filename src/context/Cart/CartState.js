@@ -6,7 +6,6 @@ import {
   SHOW_HIDE_CART,
   ADD_TO_CART,
   REMOVE_ITEM,
-  CLOSE_DROPDOWN,
   DECREASE_ITEM,
 } from "../Types";
 
@@ -32,9 +31,6 @@ const CartState = ({ children }) => {
     dispatch({ type: REMOVE_ITEM, payload: item });
   };
 
-  const closeDropdown = () => {
-    dispatch({ type: CLOSE_DROPDOWN });
-  };
   const decreaseItem = item => {
     dispatch({ type: DECREASE_ITEM, payload: item });
   };
@@ -51,7 +47,7 @@ const CartState = ({ children }) => {
         addToCart,
         showHideCart,
         removeItem,
-        closeDropdown,
+
         decreaseItem,
       }}
     >
