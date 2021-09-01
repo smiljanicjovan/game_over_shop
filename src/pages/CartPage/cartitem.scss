@@ -3,30 +3,61 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  padding: 20px 50px;
-  margin: auto;
+  width: 100%;
+  padding: 20px;
+
+  @media (max-width: 600px) {
+    padding: 10px;
+  }
 
   &-about {
-    font-size: 18px;
-    width: 300px;
+    font-size: 16px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (max-width: 800px) {
+      width: 120px;
+    }
+
+    @media (max-width: 600px) {
+      width: 100px;
+    }
   }
 
   img {
     width: 120px;
     height: 70px;
+
+    @media (max-width: 600px) {
+      width: 80px;
+      height: 40px;
+    }
   }
 
-  &_remove {
-    background-color: transparent;
-    border: none;
+  &-remove {
     padding: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    transform: translateX(60px);
+
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 600px) {
+      width: 30px;
+    }
+
+    &_btn {
+      background-color: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+
+      @media (max-width: 600px) {
+        font-size: 16px;
+      }
+    }
   }
 }
 
@@ -40,6 +71,10 @@
   p {
     font-size: 20px;
     padding: 5px;
+
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
   }
   button {
     background-color: transparent;
@@ -47,5 +82,9 @@
     padding: 5px;
     font-size: 20px;
     cursor: pointer;
+
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
   }
 }

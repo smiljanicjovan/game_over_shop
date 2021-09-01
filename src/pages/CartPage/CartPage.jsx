@@ -17,26 +17,25 @@ export default function CartPage() {
   return (
     <>
       <NavBar />
-      <>
-        <div className="cartwrap">
-          {cartItems.map(item => (
-            <CartItem key={item.gameID} item={item} />
-          ))}
-          <div className="paying">
-            <div className="paying_totalprice">
-              Total is: <span>{totalPrice.toFixed(2)} €</span>
-            </div>
-            <div className="paying_button">
-              <StripeButton price={totalPrice} />
-            </div>
+
+      <div className="cartwrap">
+        {cartItems.map(item => (
+          <CartItem key={item.gameID} item={item} />
+        ))}
+        <div className="paying">
+          <div className="paying_totalprice">
+            Total is: <span>{totalPrice.toFixed(2)} €</span>
+          </div>
+          <div className="paying_button">
+            <StripeButton price={totalPrice} />
           </div>
         </div>
-      </>
-      <div className="test-warning">
-        **Cart number for testing**
-        <br />
-        Card Number :4242 4242 4242 4242
-        <br /> Exp: 01/23 CVV: 123
+        <div className="test-warning">
+          **Cart number for testing**
+          <br />
+          Card Number :4242 4242 4242 4242
+          <br /> Exp: 01/23 CVV: 123
+        </div>
       </div>
     </>
   );

@@ -24,13 +24,15 @@ export default function CartItem({ item }) {
           <p>{item.quantity}</p>
           <button onClick={() => addToCart(item)}>&#10095;</button>
         </div>
-        <button
-          className="cartitem_remove"
-          onClick={() => removeItem(item.gameID)}
-        >
-          {" "}
-          &#10006;
-        </button>
+        <div className="cartitem-remove">
+          <button
+            className="cartitem-remove_btn"
+            onClick={() => removeItem(item.gameID)}
+          >
+            {" "}
+            &#10006;
+          </button>
+        </div>
       </div>
     </>
   );
