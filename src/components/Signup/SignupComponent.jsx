@@ -11,12 +11,10 @@ import {
 } from "../Error/SignupError";
 
 export default function Signup() {
-  const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
 
-  console.log(emailRef);
   const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -53,16 +51,6 @@ export default function Signup() {
         )}
         {error && error}
         <form onSubmit={handleSubmit} className="signup_form">
-          <label className="signin_form-group">
-            Name:
-            <input
-              type="name"
-              name="name"
-              ref={nameRef}
-              className="signin_form-group-input "
-              placeholder="Type your name"
-            />
-          </label>
           <label className="signup_form-group">
             Email:
             <input
