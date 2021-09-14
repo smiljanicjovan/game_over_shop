@@ -9,12 +9,6 @@
 [https://gameover-shop.vercel.app/](https://gameover-shop.vercel.app/)
 
   
-  
-<h2>🧐 Features</h2>
-
-Here're some of the project's best features:
-
-*   Responsive website design
 
 <h2>🛠️ Installation Steps:</h2>
 
