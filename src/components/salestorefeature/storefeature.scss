@@ -1,0 +1,51 @@
+.salefeature {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+
+  &_wrap {
+    position: relative;
+    &:hover {
+      .sales_btn {
+        display: block;
+      }
+      .salefeature_wrap-img {
+        opacity: 0.5;
+      }
+    }
+
+    .sales_btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      padding: 25px 40px;
+      background-color: black;
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: Poppins;
+      border-radius: 5px;
+
+      display: none;
+
+      z-index: 100;
+    }
+    &-img {
+      width: 500px;
+      height: 300px;
+      cursor: pointer;
+
+      position: relative;
+      z-index: 3;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

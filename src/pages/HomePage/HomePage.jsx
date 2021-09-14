@@ -7,6 +7,8 @@ import Slider from "../../components/Slider/Slider";
 import Features from "../../components/Features/Features";
 import PopularProducts from "../../components/PopularProducts/PopularProducts";
 import StoreFeatures from "../../components/StoreFeatures/StoreFeatures";
+import SaleFeature from "../../components/salestorefeature/SaleFeature";
+import Footer from "../../components/Footer/Footer";
 
 export default function HomePage() {
   return (
@@ -15,10 +17,12 @@ export default function HomePage() {
 
       <Slider />
 
+      <SaleFeature />
       <PopularProducts />
       <Features />
       <GamesList />
       <StoreFeatures />
+      <Footer />
     </>
   );
 }
