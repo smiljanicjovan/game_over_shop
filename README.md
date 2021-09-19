@@ -21,7 +21,7 @@ git clone https://github.com/jovan999/React-GameOver_Shop
 <p>2. Enter directory:</p>
 
 ```
-cd into folder
+cd my-repo-name
 ```
 
 <p>3. Installation:</p>
