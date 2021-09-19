@@ -8,6 +8,10 @@
 
 [https://gameover-shop.vercel.app/](https://gameover-shop.vercel.app/)
 
+
+<h2>Project Screenshots:</h2>
+
+<img src="https://api.pikwy.com/web/6147b5cec850fd486955acbe.jpg" alt="shields" width="100%" height="400/">
   
 
 <h2>🛠️ Installation Steps:</h2>
