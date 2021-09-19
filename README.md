@@ -51,3 +51,4 @@ Technologies used in the project:
 *   React
 *   JavaScript
 *   Firebase
+*   Stripe
