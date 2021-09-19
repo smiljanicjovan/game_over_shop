@@ -1,14 +1,13 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 
-// console.log(procces.env)
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyCDuZkN-WHP-PvWlYRtIzVLaY8g4OMGvdU",
-  authDomain: "https://gameoverreact.netlify.app/",
-  projectId: "gameover-8319f",
-  storageBucket: "gameover-8319f.appspot.com",
-  messagingSenderId: "460575926520",
-  appId: "1:460575926520:web:d367caea21986e0f47b30d",
+  apiKey: process.env.REACT_APP_APY_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE,
+  messagingSenderId: process.env.REACT_APP_MESSANGIN,
+  appId: process.env.REACT_APP_APP,
 });
 
 export const auth = app.auth();
