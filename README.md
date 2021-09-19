@@ -18,7 +18,7 @@
 git clone https://github.com/jovan999/React-GameOver_Shop
 ```
 
-<p>2. Enter repository:</p>
+<p>2. Enter directory:</p>
 
 ```
 cd into folder
