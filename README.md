@@ -6,7 +6,7 @@
 
 <h2>🚀 Demo</h2>
 
-[https://gameover-shop.vercel.app/](https://gameover-shop.vercel.app/)
+[https://game-over-shop.vercel.app/](https://game-over-shop.vercel.app/)
 
 
 <h2>Project Screenshots:</h2>
