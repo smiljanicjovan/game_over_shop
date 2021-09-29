@@ -19,7 +19,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer_rights">&copy; Jovan Smiljanic 2021</div>
+        <div className="footer_rights">&copy;Jovan Smiljanic 2021</div>
       </div>
     </div>
   );
