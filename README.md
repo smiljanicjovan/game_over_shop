@@ -2,7 +2,7 @@
 
 <p align="center"><img src="https://socialify.git.ci/jovan999/React-GameOver_Shop/image?description=1&amp;font=Bitter&amp;language=1&amp;owner=1&amp;pattern=Charlie%20Brown&amp;stargazers=1&amp;theme=Dark" alt="project"></p>
 
-<p>E commerce store made with ReactJS. Technologies used to create the application are React Context API Firebase...</p>
+<p>E commerce store for video games made with ReactJS. Technologies used to create the application are React, React Context, Firebase, Stripe...</p>
 
 <h2>🚀 Demo</h2>
 
@@ -11,7 +11,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://api.pikwy.com/web/6147b5cec850fd486955acbe.jpg" alt="shields" width="100%" height="400/">
+<img src="https://ik.imagekit.io/benntsopnyab/gameovershop_quHkMJemv.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1633106247785" alt="shields" width="100%" height="400/">
   
 
 <h2>🛠️ Installation Steps:</h2>
